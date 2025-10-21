@@ -15,135 +15,183 @@ export default function ContentSections() {
   }, []);
 
   const downloadLinks = {
-    mac: 'https://github.com/yahitscara/ghostpad/releases/latest',
-    windows: 'https://github.com/yahitscara/ghostpad/releases/latest',
-    linux: 'https://github.com/yahitscara/ghostpad/releases/latest',
+    mac: 'https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-1.0.2-arm64.dmg',
+    macIntel: 'https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-1.0.2.dmg',
+    windows: 'https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad.Setup.1.0.2.exe',
+    windowsPortable: 'https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad.1.0.2.exe',
+    linuxAppImage: 'https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-1.0.2.AppImage',
+    linuxDeb: 'https://github.com/yahitscara/ghostpad/releases/latest/download/ghostpad_1.0.2_amd64.deb',
+  };
+
+  const scrollToDownload = () => {
+    document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="p-8 space-y-12">
+    <div className="p-8 space-y-16">
       {/* Hero Section */}
-      <section className="text-center space-y-4 py-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-          This IS GhostPad
+      <section className="text-center space-y-6 py-12">
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+          See Through the Noise.
         </h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          Adjust the opacity slider above to see what makes GhostPad special
+        <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          A transparent notepad that floats above every app—so you can write, learn, and code without losing sight of what matters.
         </p>
-        <p className="text-sm text-gray-500 italic">
-          You're experiencing it right now
-        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <button
+            onClick={scrollToDownload}
+            className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl"
+          >
+            → Download GhostPad
+          </button>
+          <a
+            href="#demo"
+            className="px-8 py-3 bg-gray-100 text-gray-900 rounded-lg font-semibold hover:bg-gray-200 transition-all"
+          >
+            → Try It Now
+          </a>
+        </div>
       </section>
 
       {/* Features Section */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900 text-center">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">👻</span>
-            <div>
-              <h3 className="font-semibold text-gray-900">Adjustable Transparency</h3>
-              <p className="text-sm text-gray-600">10-100% opacity control</p>
+      <section className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🫧</span>
+              <h3 className="font-bold text-gray-900">Adjustable Transparency</h3>
             </div>
+            <p className="text-gray-600 text-sm pl-8">Dial in visibility from 10–100%.</p>
           </div>
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">📌</span>
-            <div>
-              <h3 className="font-semibold text-gray-900">Always On Top</h3>
-              <p className="text-sm text-gray-600">Stays visible over other apps</p>
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">📍</span>
+              <h3 className="font-bold text-gray-900">Always-On-Top Mode</h3>
             </div>
+            <p className="text-gray-600 text-sm pl-8">Your notes, your way, anywhere.</p>
           </div>
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">🌓</span>
-            <div>
-              <h3 className="font-semibold text-gray-900">Dark Mode</h3>
-              <p className="text-sm text-gray-600">Easy on the eyes</p>
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🌗</span>
+              <h3 className="font-bold text-gray-900">Dark Mode</h3>
             </div>
+            <p className="text-gray-600 text-sm pl-8">Clarity that's easy on the eyes.</p>
           </div>
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">💾</span>
-            <div>
-              <h3 className="font-semibold text-gray-900">Auto-Save</h3>
-              <p className="text-sm text-gray-600">Never lose your work</p>
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">💾</span>
+              <h3 className="font-bold text-gray-900">Auto-Save</h3>
             </div>
+            <p className="text-gray-600 text-sm pl-8">Because ideas shouldn't vanish.</p>
           </div>
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">🔗</span>
-            <div>
-              <h3 className="font-semibold text-gray-900">Obsidian Compatible</h3>
-              <p className="text-sm text-gray-600">Works with your vault</p>
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">🔗</span>
+              <h3 className="font-bold text-gray-900">Obsidian Integration</h3>
             </div>
+            <p className="text-gray-600 text-sm pl-8">Instantly sync with your vault.</p>
           </div>
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">⌨️</span>
-            <div>
-              <h3 className="font-semibold text-gray-900">Keyboard Shortcuts</h3>
-              <p className="text-sm text-gray-600">Cmd/Ctrl + O/S/Q</p>
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">⌨️</span>
+              <h3 className="font-bold text-gray-900">Keyboard Shortcuts</h3>
             </div>
+            <p className="text-gray-600 text-sm pl-8">Quick controls that keep you in flow.</p>
           </div>
         </div>
+
+        <p className="text-center text-lg text-gray-800 font-medium italic max-w-2xl mx-auto pt-8">
+          For thinkers, coders, and creators who work between worlds.
+        </p>
       </section>
 
-      {/* Use Cases Section */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900 text-center">Perfect For</h2>
-        <ul className="space-y-3 max-w-2xl mx-auto">
-          <li className="flex items-start gap-2">
-            <span className="text-gray-700">•</span>
-            <span className="text-gray-700">Taking notes while watching videos</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-gray-700">•</span>
-            <span className="text-gray-700">Coding with documentation visible</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-gray-700">•</span>
-            <span className="text-gray-700">Writing with reference material</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-gray-700">•</span>
-            <span className="text-gray-700">Learning from tutorials</span>
-          </li>
-        </ul>
+      {/* Supporting Paragraph */}
+      <section className="space-y-6 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-700 leading-relaxed">
+          GhostPad lets you take notes without breaking flow. Adjust the transparency, pin it above any window, and stay connected to your work beneath. Whether you're studying a tutorial, writing with references, or coding from documentation—you'll never have to switch tabs again.
+        </p>
       </section>
 
       {/* Download Section */}
-      <section className="space-y-6 pb-8">
-        <h2 className="text-2xl font-bold text-gray-900 text-center">Download GhostPad</h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href={downloadLinks.mac}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              detectedOS === 'mac'
-                ? 'bg-blue-600 text-white hover:bg-blue-700 ring-2 ring-blue-400'
-                : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
-            }`}
-          >
-            Download for macOS
-          </a>
-          <a
-            href={downloadLinks.windows}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              detectedOS === 'windows'
-                ? 'bg-blue-600 text-white hover:bg-blue-700 ring-2 ring-blue-400'
-                : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
-            }`}
-          >
-            Download for Windows
-          </a>
-          <a
-            href={downloadLinks.linux}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              detectedOS === 'linux'
-                ? 'bg-blue-600 text-white hover:bg-blue-700 ring-2 ring-blue-400'
-                : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
-            }`}
-          >
-            Download for Linux
-          </a>
+      <section id="download-section" className="space-y-8 pb-8">
+        <h2 className="text-3xl font-bold text-gray-900 text-center">Download GhostPad</h2>
+
+        {/* macOS */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-gray-800 text-center">macOS</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={downloadLinks.mac}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                detectedOS === 'mac'
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 ring-2 ring-blue-400'
+                  : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+              }`}
+            >
+              Apple Silicon (M1/M2/M3)
+            </a>
+            <a
+              href={downloadLinks.macIntel}
+              className="px-6 py-3 rounded-lg font-semibold bg-gray-200 text-gray-900 hover:bg-gray-300 transition-all"
+            >
+              Intel Mac
+            </a>
+          </div>
         </div>
-        <p className="text-center text-sm text-gray-500">
-          Version 1.0.3 • Free and open source
+
+        {/* Windows */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-gray-800 text-center">Windows</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={downloadLinks.windows}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                detectedOS === 'windows'
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 ring-2 ring-blue-400'
+                  : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+              }`}
+            >
+              Installer (Recommended)
+            </a>
+            <a
+              href={downloadLinks.windowsPortable}
+              className="px-6 py-3 rounded-lg font-semibold bg-gray-200 text-gray-900 hover:bg-gray-300 transition-all"
+            >
+              Portable Version
+            </a>
+          </div>
+        </div>
+
+        {/* Linux */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-gray-800 text-center">Linux</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={downloadLinks.linuxAppImage}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                detectedOS === 'linux'
+                  ? 'bg-blue-600 text-white hover:bg-blue-700 ring-2 ring-blue-400'
+                  : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+              }`}
+            >
+              AppImage (Universal)
+            </a>
+            <a
+              href={downloadLinks.linuxDeb}
+              className="px-6 py-3 rounded-lg font-semibold bg-gray-200 text-gray-900 hover:bg-gray-300 transition-all"
+            >
+              .deb (Ubuntu/Debian)
+            </a>
+          </div>
+        </div>
+
+        <p className="text-center text-sm text-gray-500 pt-4">
+          Version 1.0.2 • Free and open source
         </p>
       </section>
 

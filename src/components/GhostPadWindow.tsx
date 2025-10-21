@@ -10,9 +10,9 @@ export default function GhostPadWindow({ children }: GhostPadWindowProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative z-10 min-h-screen flex items-start justify-center py-12 px-4">
+    <div className="relative z-10 min-h-screen flex items-start justify-center py-16 px-6">
       <div
-        className="w-full max-w-3xl rounded-lg shadow-2xl transition-all duration-200"
+        className="w-full max-w-2xl rounded-lg shadow-2xl transition-all duration-200"
         style={{
           opacity: opacity / 100,
           backgroundColor: 'rgba(255, 255, 255, 0.85)',

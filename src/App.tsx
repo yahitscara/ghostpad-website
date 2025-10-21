@@ -1,14 +1,14 @@
-import ParallaxBackground from './components/ParallaxBackground';
+import BackgroundContent from './components/BackgroundContent';
 import GhostPadWindow from './components/GhostPadWindow';
 import ContentSections from './components/ContentSections';
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-br from-indigo-50 to-purple-50">
-      {/* Parallax Background */}
-      <ParallaxBackground />
+    <div className="relative min-h-screen overflow-x-hidden">
+      {/* LAYER 1: Background Content - This is what you see THROUGH the window */}
+      <BackgroundContent />
 
-      {/* Main Content - GhostPad Window */}
+      {/* LAYER 2: GhostPad Window - Floats on top with transparency */}
       <GhostPadWindow>
         <ContentSections />
       </GhostPadWindow>
