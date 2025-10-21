@@ -4,14 +4,16 @@ import ContentSections from './components/ContentSections';
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      {/* LAYER 1: Background Content - This is what you see THROUGH the window */}
+    <div className="fixed inset-0 overflow-hidden">
+      {/* LAYER 1: Background - Static, full viewport, behind everything */}
       <BackgroundContent />
 
-      {/* LAYER 2: GhostPad Window - Floats on top with transparency */}
-      <GhostPadWindow>
-        <ContentSections />
-      </GhostPadWindow>
+      {/* LAYER 2: Window Container - Centered with buffer space */}
+      <div className="flex items-center justify-center min-h-screen p-8">
+        <GhostPadWindow>
+          <ContentSections />
+        </GhostPadWindow>
+      </div>
     </div>
   );
 }
