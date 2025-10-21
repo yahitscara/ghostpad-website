@@ -41,9 +41,9 @@ export default function GhostPadWindow({ children }: GhostPadWindowProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Title Bar - EXACT match to app */}
+      {/* Title Bar - EXACT match to app + DRAGGABLE */}
       <div
-        className="h-8 rounded-t-lg border-b flex items-center justify-between px-2 transition-opacity duration-200 relative"
+        className="title-bar h-8 rounded-t-lg border-b flex items-center justify-between px-2 transition-opacity duration-200 relative cursor-move active:cursor-grabbing"
         style={{
           backgroundColor: 'rgba(240, 240, 240, 0.6)',
           borderBottomColor: 'rgba(200, 200, 200, 0.3)',

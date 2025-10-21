@@ -1,3 +1,4 @@
+import Draggable from 'react-draggable';
 import BackgroundContent from './components/BackgroundContent';
 import GhostPadWindow from './components/GhostPadWindow';
 import ContentSections from './components/ContentSections';
@@ -8,11 +9,19 @@ function App() {
       {/* LAYER 1: Background - Static, full viewport, behind everything */}
       <BackgroundContent />
 
-      {/* LAYER 2: Window Container - Centered with buffer space */}
+      {/* LAYER 2: Draggable Window Container - Centered with buffer space */}
       <div className="flex items-center justify-center min-h-screen p-8">
-        <GhostPadWindow>
-          <ContentSections />
-        </GhostPadWindow>
+        <Draggable
+          handle=".title-bar"
+          bounds="parent"
+          defaultPosition={{ x: 0, y: 0 }}
+        >
+          <div>
+            <GhostPadWindow>
+              <ContentSections />
+            </GhostPadWindow>
+          </div>
+        </Draggable>
       </div>
     </div>
   );

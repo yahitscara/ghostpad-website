@@ -29,8 +29,18 @@ export default function ContentSections() {
 
   return (
     <div className="p-8 space-y-16">
+      {/* Interactive Demo Instructions */}
+      <section className="text-center space-y-4 py-6 bg-blue-50/50 rounded-lg -mx-8 px-8">
+        <h2 className="text-2xl font-bold text-gray-900">
+          Experience GhostPad
+        </h2>
+        <p className="text-base text-gray-700 max-w-xl mx-auto">
+          <strong>Try it now:</strong> Drag this window by the title bar and adjust the opacity slider in the menu (☰) to see through to the background.
+        </p>
+      </section>
+
       {/* Hero Section */}
-      <section className="text-center space-y-6 py-12">
+      <section className="text-center space-y-6 py-8">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
           See Through the Noise.
         </h1>
