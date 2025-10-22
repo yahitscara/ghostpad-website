@@ -29,12 +29,14 @@ export default function GhostPadWindow({ children, onDragStart }: GhostPadWindow
     };
   }, [menuOpen]);
 
+  // Calculate actual opacity for background
+  const bgOpacity = (opacity / 100) * 0.85; // 0.85 is the base opacity
+
   return (
     <div
       className="w-full max-w-[800px] flex flex-col rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-all duration-200"
       style={{
-        opacity: opacity / 100,
-        backgroundColor: 'rgba(255, 255, 255, 0.85)',
+        backgroundColor: `rgba(255, 255, 255, ${bgOpacity})`,
         border: isHovered ? '2px solid rgba(0, 0, 0, 0.2)' : '2px solid rgba(0, 0, 0, 0)',
         transform: 'translateZ(0)',
         backfaceVisibility: 'hidden',
@@ -57,6 +59,7 @@ export default function GhostPadWindow({ children, onDragStart }: GhostPadWindow
           <button
             className="px-2 py-1 text-lg text-gray-700 hover:bg-black/10 rounded transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
+            onMouseDown={(e) => e.stopPropagation()} // Prevent dragging when clicking menu
           >
             ☰
           </button>
@@ -113,6 +116,7 @@ export default function GhostPadWindow({ children, onDragStart }: GhostPadWindow
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'rgba(200, 200, 200, 0.3)';
             }}
+            onMouseDown={(e) => e.stopPropagation()} // Prevent dragging when clicking button
           >
             −
           </button>
@@ -127,6 +131,7 @@ export default function GhostPadWindow({ children, onDragStart }: GhostPadWindow
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'rgba(200, 200, 200, 0.3)';
             }}
+            onMouseDown={(e) => e.stopPropagation()} // Prevent dragging when clicking button
           >
             □
           </button>
@@ -143,6 +148,7 @@ export default function GhostPadWindow({ children, onDragStart }: GhostPadWindow
               e.currentTarget.style.background = 'rgba(200, 200, 200, 0.3)';
               e.currentTarget.style.color = '#333';
             }}
+            onMouseDown={(e) => e.stopPropagation()} // Prevent dragging when clicking button
           >
             ×
           </button>

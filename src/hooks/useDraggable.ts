@@ -6,6 +6,7 @@ interface Position {
 }
 
 export function useDraggable() {
+  // Start at 0,0 which means "centered" because parent uses flexbox centering
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const dragRef = useRef<HTMLDivElement>(null);
@@ -22,24 +23,27 @@ export function useDraggable() {
       const newX = elementStartPos.current.x + deltaX;
       const newY = elementStartPos.current.y + deltaY;
 
-      // Get parent bounds
-      const parent = dragRef.current.parentElement;
-      if (parent) {
-        const parentRect = parent.getBoundingClientRect();
-        const elementRect = dragRef.current.getBoundingClientRect();
+      // Get current element position and viewport bounds
+      const elementRect = dragRef.current.getBoundingClientRect();
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
 
-        // Calculate bounds
-        const maxX = parentRect.width - elementRect.width;
-        const maxY = parentRect.height - elementRect.height;
+      // The element is centered by flexbox, so we need to calculate bounds
+      // relative to that centered position, not absolute viewport coords
+      // Allow dragging as long as at least 100px of the element remains visible
+      const buffer = 100;
 
-        // Constrain position
-        const constrainedX = Math.max(0, Math.min(newX, maxX));
-        const constrainedY = Math.max(0, Math.min(newY, maxY));
+      // Calculate how far we can drag from center
+      const maxLeft = -(elementRect.width - buffer); // Can drag mostly off left
+      const maxRight = (viewportWidth - buffer); // Can drag mostly off right
+      const maxUp = -(elementRect.height - buffer); // Can drag mostly off top
+      const maxDown = (viewportHeight - buffer); // Can drag mostly off bottom
 
-        setPosition({ x: constrainedX, y: constrainedY });
-      } else {
-        setPosition({ x: newX, y: newY });
-      }
+      // Constrain to keep at least buffer pixels visible
+      const constrainedX = Math.max(maxLeft, Math.min(newX, maxRight));
+      const constrainedY = Math.max(maxUp, Math.min(newY, maxDown));
+
+      setPosition({ x: constrainedX, y: constrainedY });
     };
 
     const handleMouseUp = () => {

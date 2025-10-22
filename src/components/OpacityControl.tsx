@@ -5,7 +5,10 @@ interface OpacityControlProps {
 
 export default function OpacityControl({ value, onChange }: OpacityControlProps) {
   return (
-    <div className="flex items-center gap-2">
+    <div
+      className="flex items-center gap-2"
+      onMouseDown={(e) => e.stopPropagation()} // Prevent drag when interacting with slider
+    >
       <input
         type="range"
         min="10"
