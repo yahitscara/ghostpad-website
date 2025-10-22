@@ -3,9 +3,10 @@ import OpacityControl from './OpacityControl';
 
 interface GhostPadWindowProps {
   children: ReactNode;
+  onDragStart?: (e: React.MouseEvent) => void;
 }
 
-export default function GhostPadWindow({ children }: GhostPadWindowProps) {
+export default function GhostPadWindow({ children, onDragStart }: GhostPadWindowProps) {
   const [opacity, setOpacity] = useState(85);
   const [isHovered, setIsHovered] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,6 +50,7 @@ export default function GhostPadWindow({ children }: GhostPadWindowProps) {
           borderBottomColor: 'rgba(200, 200, 200, 0.3)',
           opacity: isHovered ? 1 : 0,
         }}
+        onMouseDown={onDragStart}
       >
         {/* Left side - Hamburger menu with dropdown */}
         <div className="relative" ref={menuRef}>
