@@ -1,30 +1,19 @@
-import { useDraggable } from './hooks/useDraggable';
-import BackgroundContent from './components/BackgroundContent';
-import GhostPadWindow from './components/GhostPadWindow';
-import ContentSections from './components/ContentSections';
+import Hero from './components/Hero';
+import About from './components/About';
+import Features from './components/Features';
+import UseCases from './components/UseCases';
+import Downloads from './components/Downloads';
+import Footer from './components/Footer';
 
 function App() {
-  const { dragRef, position, isDragging, handleMouseDown } = useDraggable();
-
   return (
-    <div className="fixed inset-0 overflow-hidden">
-      {/* LAYER 1: Background - Static, full viewport, behind everything */}
-      <BackgroundContent />
-
-      {/* LAYER 2: Draggable Window Container - Centered with buffer space */}
-      <div className="flex items-center justify-center min-h-screen p-8">
-        <div
-          ref={dragRef}
-          style={{
-            transform: `translate(${position.x}px, ${position.y}px)`,
-            cursor: isDragging ? 'grabbing' : 'default',
-          }}
-        >
-          <GhostPadWindow onDragStart={handleMouseDown}>
-            <ContentSections />
-          </GhostPadWindow>
-        </div>
-      </div>
+    <div className="bg-gray-900 text-gray-100">
+      <Hero />
+      <About />
+      <Features />
+      <UseCases />
+      <Downloads />
+      <Footer />
     </div>
   );
 }
