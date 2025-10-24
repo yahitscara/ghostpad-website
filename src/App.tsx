@@ -1,20 +1,31 @@
-import Hero from './components/Hero';
-import About from './components/About';
-import Features from './components/Features';
-import UseCases from './components/UseCases';
-import Downloads from './components/Downloads';
-import Footer from './components/Footer';
+import { Switch, Route } from "wouter";
+import { queryClient } from "./lib/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/components/theme-provider";
+import Home from "@/pages/home";
+import NotFound from "@/pages/not-found";
+
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
 
 function App() {
   return (
-    <div className="bg-gray-900 text-gray-100">
-      <Hero />
-      <About />
-      <Features />
-      <UseCases />
-      <Downloads />
-      <Footer />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="light">
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 

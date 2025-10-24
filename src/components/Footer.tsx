@@ -1,59 +1,78 @@
-export default function Footer() {
+import { Github, Twitter, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+export function Footer() {
   return (
-    <footer className="py-12 px-8 border-t border-gray-800">
-      <div className="max-w-6xl mx-auto">
-        {/* Social links */}
-        <div className="flex justify-center gap-8 mb-6">
-          <a
-            href="https://github.com/yahitscara/ghostpad"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-200 transition-colors"
-            aria-label="GitHub"
-          >
-            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clipRule="evenodd"
+    <footer className="border-t py-12 bg-muted/20">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div>
+            {/* 🎨 BRANDING: Add your logo here */}
+            {/* Example: <img src="/path/to/logo.svg" alt="TransparentWrite" className="h-8 mb-4" /> */}
+            <h3 className="font-bold text-lg mb-4">TransparentWrite</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              The writing app that never gets in your way. Write, watch, and work simultaneously.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Product</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#features" className="hover:text-foreground transition-colors" data-testid="link-features">Features</a></li>
+              <li><a href="#download" className="hover:text-foreground transition-colors" data-testid="link-download">Download</a></li>
+              <li><a href="#docs" className="hover:text-foreground transition-colors" data-testid="link-docs">Documentation</a></li>
+              <li><a href="#changelog" className="hover:text-foreground transition-colors" data-testid="link-changelog">Changelog</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Support</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#help" className="hover:text-foreground transition-colors" data-testid="link-help">Help Center</a></li>
+              <li><a href="#community" className="hover:text-foreground transition-colors" data-testid="link-community">Community</a></li>
+              <li><a href="#contact" className="hover:text-foreground transition-colors" data-testid="link-contact">Contact</a></li>
+              <li><a href="#faq" className="hover:text-foreground transition-colors" data-testid="link-faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Stay Updated</h4>
+            <p className="text-sm text-muted-foreground mb-3">Get notified about new features and updates.</p>
+            <div className="flex gap-2">
+              <Input 
+                placeholder="your@email.com" 
+                type="email" 
+                className="h-9"
+                data-testid="input-newsletter"
               />
-            </svg>
-          </a>
-          <a
-            href="https://twitter.com/yahitscara"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-200 transition-colors"
-            aria-label="Twitter"
-          >
-            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-          <a
-            href="https://www.buymeacoffee.com/yahitscara"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-200 transition-colors"
-            aria-label="Buy me a coffee"
-          >
-            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z" />
-            </svg>
-          </a>
+              <Button size="sm" data-testid="button-subscribe">Subscribe</Button>
+            </div>
+          </div>
         </div>
 
-        {/* Credits */}
-        <p className="text-center text-gray-400">
-          Made with 👻 by{' '}
-          <a
-            href="https://github.com/yahitscara"
-            className="text-purple-400 hover:text-purple-300 transition-colors"
-          >
-            Cara
-          </a>
-        </p>
-        <p className="text-center text-gray-500 text-sm mt-2">MIT Licensed</p>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t gap-4">
+          <p className="text-sm text-muted-foreground">
+            © 2025 TransparentWrite. All rights reserved.
+          </p>
+          
+          <div className="flex gap-4">
+            <Button variant="ghost" size="icon" data-testid="button-github">
+              <Github className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" data-testid="button-twitter">
+              <Twitter className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" data-testid="button-email">
+              <Mail className="h-5 w-5" />
+            </Button>
+          </div>
+
+          <div className="flex gap-6 text-sm text-muted-foreground">
+            <a href="#privacy" className="hover:text-foreground transition-colors" data-testid="link-privacy">Privacy</a>
+            <a href="#terms" className="hover:text-foreground transition-colors" data-testid="link-terms">Terms</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
