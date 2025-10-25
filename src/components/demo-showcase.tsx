@@ -15,7 +15,7 @@ export function DemoShowcase() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <Card className="overflow-hidden group hover-elevate" data-testid="card-demo-video">
             <img
-              src={`${import.meta.env.BASE_URL}demo1.gif`}
+              src="https://github.com/yahitscara/ghostpad-website/releases/download/assets-v1.0/demo1.gif"
               alt="Writing while watching videos"
               className="w-full aspect-video object-cover"
             />
@@ -29,7 +29,7 @@ export function DemoShowcase() {
 
           <Card className="overflow-hidden group hover-elevate" data-testid="card-demo-research">
             <img
-              src={`${import.meta.env.BASE_URL}research_demo.gif`}
+              src="https://github.com/yahitscara/ghostpad-website/releases/download/assets-v1.0/research_demo.gif"
               alt="Writing over research materials"
               className="w-full aspect-video object-cover"
             />
@@ -53,7 +53,7 @@ export function DemoShowcase() {
               </div>
               <div className="flex justify-center">
                 <img
-                  src={`${import.meta.env.BASE_URL}transp_demo.gif`}
+                  src="https://github.com/yahitscara/ghostpad-website/releases/download/assets-v1.0/transp_demo.gif"
                   alt="Opacity slider control"
                   className="w-full max-w-sm rounded-lg"
                 />
