@@ -5,18 +5,18 @@ const features = [
   {
     icon: Layers,
     title: "Adjustable Opacity",
-    description: "Fine-tune transparency from 0% to 100% with instant feedback. See exactly what you need while you write.",
+    description: "Fine-tune transparency from 10% to 100% with instant feedback. See exactly what you need while you write.",
   },
   {
     icon: Zap,
     title: "Lightning Fast",
     description: "Minimal resource usage means smooth performance even on older machines. Start writing in milliseconds.",
   },
-  {
-    icon: FileText,
-    title: "Markdown Support",
-    description: "Full markdown editing with live preview. Format your notes with headers, lists, code blocks, and more.",
-  },
+  // {
+  //   icon: FileText,
+  //   title: "Markdown Support",
+  //   description: "Full markdown editing with live preview. Format your notes with headers, lists, code blocks, and more.",
+  // },
   {
     icon: Save,
     title: "Auto-Save",
@@ -25,7 +25,7 @@ const features = [
   {
     icon: Globe,
     title: "Cross-Platform",
-    description: "Seamless experience across Windows, macOS, and Linux. Your settings sync wherever you work.",
+    description: "Seamless experience across Windows, macOS, and Linux.",
   },
   {
     icon: Sparkles,

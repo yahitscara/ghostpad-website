@@ -11,8 +11,8 @@ const useCases = [
   {
     icon: Code,
     title: "Developers",
-    description: "Read documentation or Stack Overflow while coding side-by-side. Copy snippets and understand context without window switching.",
-    benefit: "Code faster with documentation in view",
+    description: "Jot down ideas while reading documentation or Stack Overflow. Capture code snippets and notes without losing your place.",
+    benefit: "Document thoughts while staying in context",
   },
   {
     icon: BookOpen,

@@ -99,7 +99,7 @@ export function DownloadSection() {
                   >
                     <a href={download.urls.silicon} download>
                       <Download className="h-4 w-4" />
-                      Apple Silicon (M1/M2/M3)
+                      Apple Silicon
                     </a>
                   </Button>
                   <Button

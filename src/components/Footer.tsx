@@ -1,4 +1,4 @@
-import { Github, Twitter, Mail } from "lucide-react";
+import { Github, Mail, Coffee, BookOpen, AtSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -9,8 +9,8 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
             {/* 🎨 BRANDING: Add your logo here */}
-            {/* Example: <img src="/path/to/logo.svg" alt="TransparentWrite" className="h-8 mb-4" /> */}
-            <h3 className="font-bold text-lg mb-4">TransparentWrite</h3>
+            {/* Example: <img src="/path/to/logo.svg" alt="GhostPad" className="h-8 mb-4" /> */}
+            <h3 className="font-bold text-lg mb-4">GhostPad</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               The writing app that never gets in your way. Write, watch, and work simultaneously.
             </p>
@@ -53,18 +53,34 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 TransparentWrite. All rights reserved.
+            © 2025 GhostPad. All rights reserved.
           </p>
-          
+
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon" data-testid="button-github">
-              <Github className="h-5 w-5" />
+            <Button variant="ghost" size="icon" asChild data-testid="button-github">
+              <a href="https://github.com/yahitscara/ghostpad" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" data-testid="button-twitter">
-              <Twitter className="h-5 w-5" />
+            <Button variant="ghost" size="icon" asChild data-testid="button-buymeacoffee">
+              <a href="https://buymeacoffee.com/yahitscara" target="_blank" rel="noopener noreferrer">
+                <Coffee className="h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" data-testid="button-email">
-              <Mail className="h-5 w-5" />
+            <Button variant="ghost" size="icon" asChild data-testid="button-substack">
+              <a href="https://unabstraktd.substack.com/" target="_blank" rel="noopener noreferrer">
+                <BookOpen className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild data-testid="button-threads">
+              <a href="https://www.threads.net/@yah.its.cara/" target="_blank" rel="noopener noreferrer">
+                <AtSign className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild data-testid="button-email">
+              <a href="mailto:yahitscara@gmail.com" target="_blank" rel="noopener noreferrer">
+                <Mail className="h-5 w-5" />
+              </a>
             </Button>
           </div>
 
