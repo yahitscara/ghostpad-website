@@ -9,8 +9,8 @@ const downloads = [
     icon: Monitor,
     version: "Latest",
     urls: {
-      installer: "https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-Setup.exe",
-      portable: "https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-Portable.exe",
+      installer: "https://github.com/yahitscara/GhostPad/releases/latest/download/GhostPad-Setup.exe",
+      portable: "https://github.com/yahitscara/GhostPad/releases/latest/download/GhostPad-Portable.exe",
     },
     requirements: "Windows 10 or later",
     testId: "card-download-windows",
@@ -20,8 +20,8 @@ const downloads = [
     icon: Apple,
     version: "Latest",
     urls: {
-      intel: "https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-x64.dmg",
-      silicon: "https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad-arm64.dmg",
+      intel: "https://github.com/yahitscara/GhostPad/releases/latest/download/GhostPad-x64.dmg",
+      silicon: "https://github.com/yahitscara/GhostPad/releases/latest/download/GhostPad-arm64.dmg",
     },
     requirements: "macOS 11.0 or later",
     testId: "card-download-macos",
@@ -31,8 +31,8 @@ const downloads = [
     icon: Terminal,
     version: "Latest",
     urls: {
-      appimage: "https://github.com/yahitscara/ghostpad/releases/latest/download/GhostPad.AppImage",
-      deb: "https://github.com/yahitscara/ghostpad/releases/latest/download/ghostpad_amd64.deb",
+      appimage: "https://github.com/yahitscara/GhostPad/releases/latest/download/GhostPad.AppImage",
+      deb: "https://github.com/yahitscara/GhostPad/releases/latest/download/ghostpad_amd64.deb",
     },
     requirements: "Ubuntu 20.04+ / Debian 11+",
     testId: "card-download-linux",
