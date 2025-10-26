@@ -1,4 +1,4 @@
-import { Download, Monitor, Apple, Terminal } from "lucide-react";
+import { Download, Monitor, Apple, Terminal, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -45,9 +45,18 @@ export function DownloadSection() {
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-5xl font-bold mb-6">Download Now</h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground mb-4">
             Choose your platform and start writing transparently in seconds.
           </p>
+          <a
+            href="https://github.com/yahitscara/GhostPad#installation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+          >
+            Need help installing? View complete installation and update instructions
+            <ExternalLink className="h-4 w-4" />
+          </a>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
